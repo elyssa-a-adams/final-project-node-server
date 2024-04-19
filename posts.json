@@ -1,0 +1,6 @@
+[ { "userId": "ScubaSteve", "image": "trunkfish.JPG", "caption": "Some really cool caption about the fish I saw while scuba diving.", "location": "Bonaire",
+    "comments": ["Great job", "Cool fish"]  },
+    { "userId": "ScubaSally", "image": "parrotfish.JPG", "caption": "Some really cool caption about the fish I saw while scuba diving.", "location": "Bonaire",
+    "comments": ["Great job", "Cool fish"]  },
+    { "userId": "ScubaSam", "image": "tarpin.JPG", "caption": "Some really cool caption about the fish I saw while scuba diving.", "location": "Bonaire",
+    "comments": ["Great job", "Cool fish"]  } ]
