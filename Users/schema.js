@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     followers: { type: Array, default: [] },
     role: {
       type: String,
-      enum: ["STUDENT", "FACULTY", "ADMIN", "USER"],
+      enum: ["ADMIN", "USER"],
       default: "USER",},
   },
   { collection: "users" });

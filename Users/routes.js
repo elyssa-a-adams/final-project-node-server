@@ -50,12 +50,20 @@ export default function UserRoutes(app) {
     res.json(currentUser);
   };
   const findAllUsers = async (req, res) => {
+    const { username } = req.query;
+    if (username) {
+      const user = await dao.findUserByUsername(username);
+      res.json(user);
+      return;
+    }
     const users = await dao.findAllUsers();
     res.json(users);
+    return;
   };
   app.post("/api/users", createUser);
   app.get("/api/users", findAllUsers);
   app.get("/api/users/:userId", findUserById);
+  app.get("/api/users/:username", dao.findUserByUsername);
   app.put("/api/users/:userId", updateUser);
   app.delete("/api/users/:userId", deleteUser);
   app.post("/api/users/signup", signup);
