@@ -1,0 +1,35 @@
+[
+    {
+      "username": "Mongo Steve",
+      "password": "steve123",
+      "firstName": "Steve",
+      "profilePic": "parrotfish.JPG",
+      "followers": ["ScubaSally", "ScubaSam"],
+      "lastName": "Mongo",
+      "email": "steve@mongo.com",
+      "dob": "1970-05-29",
+      "role": "USER"
+    },
+    {
+      "username": "ScubaSally",
+      "password": "sally123",
+      "profilePic": "parrotfish.JPG",
+      "firstName": "Sally",
+      "followers": ["ScubaSam"],
+      "lastName": "Johnson",
+      "email": "sally@johnson.com",
+      "dob": "1972-02-19",
+      "role": "ADMIN"
+    },
+    {
+      "username": "ScubaSam",
+      "profilePic": "parrotfish.JPG",
+      "password": "sam123",
+      "firstName": "Sam",
+      "lastName": "Scuba",
+      "followers": [],
+      "email": "sam@scuba.com",
+      "dob": "1918-07-04",
+      "role": "USER"
+    }
+  ]
