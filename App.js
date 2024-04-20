@@ -5,7 +5,6 @@ import express from "express"
 const app = express();
 app.use(cors());
 app.use(express.json());
-//mongoose.connect("mongodb://localhost:27017/Snapper");
-mongoose.connect(DB_CONNECTION_STRING);
+mongoose.connect("mongodb+srv://snapper:bonaire@cluster0.zxeedro.mongodb.net/Snapper?retryWrites=true&w=majority&appName=Cluster0");
 PostRoutes(app);
-app.listen(process.env.PORT || 4000);
+app.listen(4000);
