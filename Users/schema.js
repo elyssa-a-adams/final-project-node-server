@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     dob: Date,
     profilePic: String,
     followers: { type: Array, default: [] },
+    following: { type: Array, default: [] },
     role: {
       type: String,
       enum: ["ADMIN", "USER"],
