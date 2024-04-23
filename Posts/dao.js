@@ -7,3 +7,4 @@ export const findAllPosts = () => model.find();
 export const findPostById = (postId) => model.findById(postId);
 export const updatePost = (postId, post) => model.updateOne({ _id: postId }, { $set: post });
 export const deletePost = (postId) => model.deleteOne({ _id: postId });
+export const findPostsByUsername = (username) => model.find({ username: username });
