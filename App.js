@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import session from "express-session";
 import PostRoutes from "./Posts/routes.js";
+import SearchRoutes from "./Search/routes.js";
 const app = express();
 app.use(express.json());
 app.use(
@@ -30,4 +31,5 @@ app.use(session(sessionOptions));
 mongoose.connect("mongodb+srv://snapper:bonaire@cluster0.zxeedro.mongodb.net/Snapper?retryWrites=true&w=majority&appName=Cluster0");
 PostRoutes(app);
 UserRoutes(app);
+SearchRoutes(app);
 app.listen(process.env.PORT || 4000);
