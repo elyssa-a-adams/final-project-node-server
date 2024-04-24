@@ -7,7 +7,6 @@ import session from "express-session";
 import PostRoutes from "./Posts/routes.js";
 import SearchRoutes from "./Search/routes.js";
 const app = express();
-const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 app.use(express.json({limit: "50mb"}));
 app.use(
   cors({
@@ -29,7 +28,7 @@ if (process.env.NODE_ENV !== "development") {
   };
 }
 app.use(session(sessionOptions));
-mongoose.connect(DB_CONNECTION_STRING);
+mongoose.connect("mongodb+srv://snapper:bonaire@cluster0.zxeedro.mongodb.net/Snapper?retryWrites=true&w=majority&appName=Cluster0");
 PostRoutes(app);
 UserRoutes(app);
 SearchRoutes(app);
