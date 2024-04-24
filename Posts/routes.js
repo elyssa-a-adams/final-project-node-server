@@ -20,16 +20,13 @@ export default function PostRoutes(app) {
   const findAllPosts = async (req, res) => {
     const { username } = req.query;
     const { city } = req.query;
-    console.log("username", username);
     if (username) {
       const posts = await dao.findPostsByUsername(username);
-      console.log("username", username);
       res.json(posts);
       return;
     }
     if (city) {
       const posts = await dao.findPostsByCity(city);
-      console.log("city found", city);
       res.json(posts);
       return;
     }

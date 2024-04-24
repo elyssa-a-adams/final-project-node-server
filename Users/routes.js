@@ -4,7 +4,6 @@ export default function UserRoutes(app) {
     const user = req.body;
     delete user._id;
     const result = await dao.createUser(user);
-    console.log("User created: ", user);
     res.json(result);
   };
   const deleteUser = async (req, res) => {
