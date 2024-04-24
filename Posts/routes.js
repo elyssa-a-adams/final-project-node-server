@@ -1,5 +1,18 @@
 import * as dao from "./dao.js";
+import multer from "multer";
 export default function PostRoutes(app) {
+  const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, "uploads/");
+    },
+    filename: (req, file, cb) => {
+      cb(null, file.originalname);
+    },
+  });
+  const upload = multer({
+    storage: storage,
+    limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB limit
+  });
   const createPost = async (req, res) => {
     const post = req.body;
     delete post._id;
@@ -22,6 +35,9 @@ export default function PostRoutes(app) {
     res.json(posts);
   };
   app.post("/api/posts", createPost);
+  app.post("/api/posts/upload", upload.single("image"), (req, res) => {
+    res.send(req.file.path);
+  });
   app.get("/api/posts", findAllPosts);
   app.get("/api/posts/:postId", findPostById);
   app.put("/api/posts/:postId", updatePost);

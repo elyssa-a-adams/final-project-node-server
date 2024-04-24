@@ -1,10 +1,9 @@
 import e from "express";
 import mongoose from "mongoose";
 const postSchema = new mongoose.Schema({
-    id: { type: String, required: true},
-    username: { type: String, required: true},
+    id: String,
+    username: String,
     image: String,
-    imageData: Buffer,
     caption: String,
     location: String,
     comments: [],
