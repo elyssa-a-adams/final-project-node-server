@@ -7,7 +7,7 @@ import session from "express-session";
 import PostRoutes from "./Posts/routes.js";
 import SearchRoutes from "./Search/routes.js";
 const app = express();
-app.use(express.json());
+app.use(express.json({limit: "50mb"}));
 app.use(
   cors({
     credentials: true,
